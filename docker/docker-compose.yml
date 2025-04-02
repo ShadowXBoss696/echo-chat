@@ -1,0 +1,24 @@
+name: eca
+
+services:
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: eca_db
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - eca-network
+    restart: unless-stopped
+
+volumes:
+
+
+networks:
+  eca-network:
+    driver: bridge

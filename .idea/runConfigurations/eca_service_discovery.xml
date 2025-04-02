@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="eca-service-discovery" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="com.shadowx.echo-chat.eca-service-discovery.main" />
+    <projectPathOnTarget name="projectPathOnTarget" value="/app" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.shadowx.echochat.discovery.EurekaServerApplication" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.shadowx.echochat.discovery.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

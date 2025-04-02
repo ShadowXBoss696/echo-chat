@@ -1,0 +1,200 @@
+https://github.com/spring-petclinic/spring-petclinic-microservices
+https://medium.com/@bubu.tripathy/best-practices-entity-class-design-with-jpa-and-spring-boot-6f703339ab3d
+
+
+
+User 👤
+
+Attributes: id (PK), username, email, profile_picture, status, timestamp
+
+Chat 💬
+
+Attributes: id (PK), type (PRIVATE/GROUP), timestamp
+
+Message ✉️
+
+Attributes: id (PK), chat_id (FK), sender_id (FK), content, content_type (TEXT/IMAGE/VIDEO), timestamp
+
+Chat_Members 👥
+
+Attributes: user_id (FK), chat_id (FK), role (ADMIN/MEMBER), joined_at, last_seen_message_id (FK)
+
+Attachment 📎
+
+Attributes: id (PK), message_id (FK), file_url, file_type, size, timestamp
+
+Reaction ❤️
+
+Attributes: id (PK), message_id (FK), user_id (FK), reaction_type, timestamp
+
+Blocked_Users 🚫
+
+Attributes: id (PK), blocker_id (FK), blocked_id (FK), timestamp
+
+
+
+
+
+
+messenger-app/
+│
+├── backend/
+│   ├── api-gateway/
+│   │   ├── src/
+│   │   │   ├── main/
+│   │   │   │   ├── java/
+│   │   │   │   │   └── com/messenger/gateway/
+│   │   │   │   │       ├── config/
+│   │   │   │   │       ├── filter/
+│   │   │   │   │       └── controller/
+│   │   │   └── resources/
+│   │   │       ├── application.yml
+│   │   │       └── logback-spring.xml
+│   │   └── pom.xml
+│   │
+│   ├── service-discovery/
+│   │   ├── src/
+│   │   │   ├── main/
+│   │   │   │   ├── java/
+│   │   │   │   │   └── com/messenger/discovery/
+│   │   │   └── resources/
+│   │   │       └── application.yml
+│   │   └── pom.xml
+│   │
+│   ├── config-server/
+│   │   ├── src/
+│   │   │   ├── main/
+│   │   │   │   ├── java/
+│   │   │   │   │   └── com/messenger/config/
+│   │   │   └── resources/
+│   │   │       └── application.yml
+│   │   └── pom.xml
+│   │
+│   ├── microservices/
+│   │   ├── user-service/
+│   │   │   ├── src/
+│   │   │   │   ├── main/
+│   │   │   │   │   ├── java/
+│   │   │   │   │   │   └── com/messenger/user/
+│   │   │   │   │   │       ├── controller/
+│   │   │   │   │   │       ├── service/
+│   │   │   │   │   │       ├── repository/
+│   │   │   │   │   │       ├── model/
+│   │   │   │   │   │       └── dto/
+│   │   │   │   │   └── resources/
+│   │   │   │   │       ├── application.yml
+│   │   │   │   │       └── db/migration/
+│   │   │   └── pom.xml
+│   │   │
+│   │   ├── chat-service/
+│   │   │   ├── src/
+│   │   │   │   ├── main/
+│   │   │   │   │   ├── java/
+│   │   │   │   │   │   └── com/messenger/chat/
+│   │   │   │   │   │       ├── controller/
+│   │   │   │   │   │       ├── service/
+│   │   │   │   │   │       ├── repository/
+│   │   │   │   │   │       ├── model/
+│   │   │   │   │   │       └── dto/
+│   │   │   │   │   └── resources/
+│   │   │   │   │       ├── application.yml
+│   │   │   │   │       └── db/migration/
+│   │   │   └── pom.xml
+│   │   │
+│   │   ├── message-service/
+│   │   │   ├── src/
+│   │   │   │   ├── main/
+│   │   │   │   │   ├── java/
+│   │   │   │   │   │   └── com/messenger/message/
+│   │   │   │   │   │       ├── controller/
+│   │   │   │   │   │       ├── service/
+│   │   │   │   │   │       ├── repository/
+│   │   │   │   │   │       ├── model/
+│   │   │   │   │   │       └── dto/
+│   │   │   │   │   └── resources/
+│   │   │   │   │       ├── application.yml
+│   │   │   │   │       └── db/migration/
+│   │   │   └── pom.xml
+│   │   │
+│   │   └── notification-service/
+│   │       ├── src/
+│   │       │   ├── main/
+│   │       │   │   ├── java/
+│   │       │   │   │   └── com/messenger/notification/
+│   │       │   │   │       ├── controller/
+│   │       │   │       ├── service/
+│   │       │   │       ├── repository/
+│   │       │   │       ├── model/
+│   │       │   │       └── dto/
+│   │       │   └── resources/
+│   │       │       └── application.yml
+│   │       └── pom.xml
+│   │
+│   └── shared/
+│       ├── common-dto/
+│       │   ├── src/
+│       │   │   └── main/java/
+│       │   │       └── com/messenger/common/
+│       │   │           ├── dto/
+│       │   │           └── exception/
+│       │   └── pom.xml
+│       │
+│       └── common-config/
+│           ├── src/
+│           │   └── main/java/
+│           │       └── com/messenger/config/
+│           │           ├── security/
+│           │           └── kafka/
+│           └── pom.xml
+│
+├── frontend/
+│   ├── web-client/
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── services/
+│   │   │   ├── hooks/
+│   │   │   └── utils/
+│   │   ├── public/
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   │
+│   └── mobile-client/
+│       ├── src/
+│       │   ├── components/
+│       │   ├── screens/
+│       │   ├── navigation/
+│       │   ├── services/
+│       │   └── utils/
+│       ├── ios/
+│       ├── android/
+│       ├── package.json
+│       └── tsconfig.json
+│
+├── infrastructure/
+│   ├── docker/
+│   │   ├── backend/
+│   │   │   ├── docker-compose.yml
+│   │   │   └── Dockerfile.template
+│   │   └── database/
+│   │       └── docker-compose.yml
+│   │
+│   └── kubernetes/
+│       ├── deployments/
+│       ├── services/
+│       └── ingress/
+│
+├── docs/
+│   ├── api/
+│   ├── architecture/
+│   └── database-schema/
+│
+├── scripts/
+│   ├── build/
+│   ├── deploy/
+│   └── database/
+│
+├── root-pom.xml
+├── README.md
+├── .gitignore
+└── LICENSE

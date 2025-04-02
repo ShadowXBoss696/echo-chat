@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eca-service-discovery
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: eca-service-discovery
+  server:
+    enable-self-preservation: false     # Todo: Dev only
+  client:
+    register-with-eureka: false
+    fetch-registry: false
