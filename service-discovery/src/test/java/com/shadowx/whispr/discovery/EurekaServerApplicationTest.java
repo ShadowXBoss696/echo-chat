@@ -1,4 +1,4 @@
-package com.shadowx.echochat.discovery;
+package com.shadowx.whispr.discovery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

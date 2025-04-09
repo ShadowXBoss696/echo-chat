@@ -2,7 +2,7 @@ pluginManagement {
     includeBuild('build-config')
 }
 
-rootProject.name = 'echo-chat'
+rootProject.name = 'whispr'
 
 
 // Automatic Project Discovery
@@ -10,5 +10,8 @@ rootProject.name = 'echo-chat'
 def excludeDirs = ['build-config']
 
 rootDir.listFiles()
-    .findAll {dir -> dir.isDirectory() && new File(dir, 'build.gradle').exists() && !(dir.name in excludeDirs)}
+    .findAll {
+        dir -> dir.isDirectory() && new File(dir, 'build.gradle').exists()
+            && !(dir.name in excludeDirs)
+    }
     .each {dir -> include dir.name}

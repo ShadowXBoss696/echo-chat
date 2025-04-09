@@ -1,4 +1,4 @@
-package com.shadowx.echochat.gateway;
+package com.shadowx.whispr.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

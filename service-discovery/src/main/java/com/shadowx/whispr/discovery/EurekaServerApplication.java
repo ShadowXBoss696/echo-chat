@@ -1,4 +1,4 @@
-package com.shadowx.echochat.discovery;
+package com.shadowx.whispr.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/build-config/build-config.iml" filepath="$PROJECT_DIR$/.idea/modules/build-config/build-config.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/build-config/build-config.main.iml" filepath="$PROJECT_DIR$/.idea/modules/build-config/build-config.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/build-config/build-config.test.iml" filepath="$PROJECT_DIR$/.idea/modules/build-config/build-config.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/eca-api-gateway/echo-chat.eca-api-gateway.iml" filepath="$PROJECT_DIR$/.idea/modules/eca-api-gateway/echo-chat.eca-api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/eca-api-gateway/echo-chat.eca-api-gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/eca-api-gateway/echo-chat.eca-api-gateway.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/eca-api-gateway/echo-chat.eca-api-gateway.test.iml" filepath="$PROJECT_DIR$/.idea/modules/eca-api-gateway/echo-chat.eca-api-gateway.test.iml" />
