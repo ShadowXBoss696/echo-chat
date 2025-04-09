@@ -1,12 +1,12 @@
 <p align="center">
   <picture>
     <source srcset="docs/assets/banner-dark.png" media="(prefers-color-scheme: dark)">
-    <img alt="Tic-Tac-Toe-Board-Game" src="docs/assets/banner.png">
+    <img alt="Whispr" src="docs/assets/banner.png">
   </picture>
 </p>
 
 <p align="center">
-  <em>Tic-Tac-Toe Board Game</em>
+  <em>Where conversations feel closer</em>
 </p>
 
 ---
