@@ -1,5 +1,5 @@
 pluginManagement {
-    includeBuild('build-config')
+    includeBuild('build-logic')
 }
 
 rootProject.name = 'whispr'
@@ -7,7 +7,7 @@ rootProject.name = 'whispr'
 
 // Automatic Project Discovery
 
-def excludeDirs = ['build-config']
+def excludeDirs = ['build-logic']
 
 rootDir.listFiles()
     .findAll {

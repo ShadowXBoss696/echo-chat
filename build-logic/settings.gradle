@@ -5,4 +5,4 @@
 //    }
 //}
 
-rootProject.name = 'build-config'
+rootProject.name = 'build-logic'

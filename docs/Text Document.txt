@@ -198,3 +198,74 @@ messenger-app/
 ├── README.md
 ├── .gitignore
 └── LICENSE
+
+
+
+
+
+
+service-name/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/company/servicename/
+│   │   │       ├── api/                    # REST Controllers & API definitions
+│   │   │       │   ├── controller/         # REST endpoints
+│   │   │       │   ├── request/            # Request DTOs
+│   │   │       │   ├── response/           # Response DTOs
+│   │   │       │   └── advice/             # Controller advice for exception handling
+│   │   │       │
+│   │   │       ├── config/                 # Application configuration classes
+│   │   │       │
+│   │   │       ├── domain/                 # Core domain model
+│   │   │       │   ├── entity/             # JPA entities
+│   │   │       │   ├── repository/         # Spring Data repositories
+│   │   │       │   └── event/              # Domain events
+│   │   │       │
+│   │   │       ├── service/                # Business logic implementation
+│   │   │       │   ├── impl/               # Service implementations
+│   │   │       │   └── mapper/             # Object mappers (entity <-> DTO)
+│   │   │       │
+│   │   │       ├── client/                 # External service clients
+│   │   │       │   ├── feign/              # Feign clients for other microservices
+│   │   │       │   └── rest/               # RestTemplate clients
+│   │   │       │
+│   │   │       ├── exception/              # Custom exceptions
+│   │   │       │
+│   │   │       ├── util/                   # Utility classes
+│   │   │       │
+│   │   │       └── Application.java        # Spring Boot application entry point
+│   │   │
+│   │   └── resources/
+│   │       ├── application.yml             # Application properties
+│   │       ├── application-dev.yml         # Dev environment properties
+│   │       ├── application-prod.yml        # Production environment properties
+│   │       ├── bootstrap.yml               # Bootstrap properties (for Spring Cloud)
+│   │       └── db/migration/               # Flyway/Liquibase migration scripts
+│   │           ├── V1_0_0__init_schema.sql
+│   │           └── V1_1_0__add_indexes.sql
+│   │
+│   └── test/
+│       ├── java/
+│       │   └── com/company/servicename/
+│       │       ├── api/controller/         # Controller tests
+│       │       ├── service/                # Service tests
+│       │       ├── repository/             # Repository tests
+│       │       └── integration/            # Integration tests
+│       │
+│       └── resources/
+│           ├── application-test.yml        # Test configuration
+│           └── testdata/                   # Test data files
+│
+├── Dockerfile                              # Docker image definition
+├── pom.xml                                 # Maven build file
+├── README.md                               # Project documentation
+└── .gitignore                              # Git ignore file
+
+
+Clear Separation of Concerns:
+
+API Layer: Handles HTTP requests, input validation, and response formatting
+Service Layer: Contains business logic
+Domain Layer: Defines the data model and repositories
+Client Layer: Manages communication with external services
